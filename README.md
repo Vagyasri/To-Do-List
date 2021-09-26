@@ -39,6 +39,12 @@ In this project, I built a simple HTML list of To Do tasks. This simple web page
 - Open the folder with your code editor
 - Now You can edit the code and check the changes in the browser using Live Server
 
+### Web-pack Setup
+
+- Install Web-pack: Run npm install webpack
+- Update Distribution folder with the changes from Source folder: Run npm run build
+- Check the live changes through the local host: Run npm start
+
 ### Check linter errors:
 
 - Install npm
