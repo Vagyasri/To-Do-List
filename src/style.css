@@ -24,13 +24,27 @@ body {
   justify-content: space-between;
 }
 
-.add-bar {
-  max-width: 100%;
-  width: 90.7%;
+input,
+button {
+  border-style: hidden;
+  background-color: transparent;
+  color: grey;
+  font-style: italic;
+  outline: none;
 }
 
-input {
-  border-style: hidden;
+.enter {
+  transform: rotate(90deg);
+}
+
+.cursor,
+i {
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + span {
+  color: red;
+  text-decoration: line-through;
 }
 
 .listcont-prop {
@@ -43,12 +57,12 @@ input {
 
 .list-prop {
   display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 
-.strikethrough:checked {
-  text-decoration: line-through;
+.grow {
+  flex-grow: 1;
+  margin-left: 5px;
 }
 
 .clear {
