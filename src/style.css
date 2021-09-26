@@ -1,0 +1,63 @@
+body {
+  background-color: rgb(221, 217, 217);
+}
+
+.list-container {
+  margin: 0;
+}
+
+#tab {
+  background-color: white;
+  box-shadow: 10px 10px 10px grey;
+  max-width: 30%;
+  margin: auto;
+  height: 50vh;
+  margin-top: 100px;
+  position: relative;
+}
+
+.main {
+  border-bottom: 1px solid grey;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-bar {
+  max-width: 100%;
+  width: 90.7%;
+}
+
+input {
+  border-style: hidden;
+}
+
+.listcont-prop {
+  list-style-type: none;
+  border-bottom: 1px solid grey;
+  padding: 20px;
+  margin: 0 0 0 -40px;
+  display: flex;
+}
+
+.list-prop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.strikethrough:checked {
+  text-decoration: line-through;
+}
+
+.clear {
+  text-align: center;
+  background-color: rgb(221, 217, 217);
+  color: grey;
+  padding: 20px 0;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
