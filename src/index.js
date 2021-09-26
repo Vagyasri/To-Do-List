@@ -23,20 +23,27 @@ function render() {
   clear(container);
   todoList.forEach((todo) => {
     const div = document.createElement('div');
-    const label = document.createElement('label');
+    const listElement = document.createElement('li');
     const input = document.createElement('input');
+    const span = document.createElement('span');
+
     input.type = 'checkbox';
     input.name = 'name';
     input.value = 'value';
     input.id = 'id';
-    input.classList.add('strikethrough');
-    const listElement = document.createElement('li');
+    input.classList.add('cursor');
+    listElement.dataset.listId = todo.index;
     div.classList.add('listcont-prop');
     listElement.classList.add('list-prop');
-    listElement.innerHTML = `${todo.description}<i class="fas fa-ellipsis-v"></i>`;
-    div.appendChild(label);
+    span.classList.add('grow');
+    span.innerHTML = `${todo.description}`;
+    const icon = document.createElement('i');
+    icon.classList.add('fas');
+    icon.classList.add('fa-ellipsis-v');
+    listElement.appendChild(input);
+    listElement.appendChild(span);
+    listElement.appendChild(icon);
     div.appendChild(listElement);
-    label.appendChild(input);
     container.appendChild(div);
   });
 }
