@@ -27,20 +27,24 @@ const render = () => {
     const listElement = document.createElement('li');
     const input = document.createElement('input');
     const span = document.createElement('span');
+    const icon = document.createElement('i');
 
     input.type = 'checkbox';
     input.name = 'name';
     input.value = 'value';
     input.id = 'id';
     input.classList.add('cursor');
+
     listElement.dataset.listId = todo.index;
+    input.checked = todo.completed;
+
     div.classList.add('listcont-prop');
     listElement.classList.add('list-prop');
     span.classList.add('grow');
     span.innerHTML = `${todo.description}`;
-    const icon = document.createElement('i');
     icon.classList.add('fas');
     icon.classList.add('fa-ellipsis-v');
+
     listElement.appendChild(input);
     listElement.appendChild(span);
     listElement.appendChild(icon);
