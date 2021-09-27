@@ -15,11 +15,11 @@ const todoList = [{
   completed: true,
 }];
 
-function clear(element) {
+const clear = (element) => {
   while (element.firstChild) element.removeChild(element.firstChild);
-}
+};
 
-function render() {
+const render = () => {
   clear(container);
   todoList.forEach((todo) => {
     const div = document.createElement('div');
@@ -46,6 +46,6 @@ function render() {
     div.appendChild(listElement);
     container.appendChild(div);
   });
-}
+};
 
 render();
