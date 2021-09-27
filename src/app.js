@@ -18,12 +18,18 @@ const render = () => {
     const input = document.createElement('input');
     const span = document.createElement('span');
     const icon = document.createElement('i');
+    const dlt = document.createElement('i');
+    const edit = document.createElement('input');
 
     input.type = 'checkbox';
     input.name = 'name';
     input.value = 'value';
     input.id = 'id';
     input.classList.add('cursor');
+
+    edit.type = 'text';
+    edit.placeholder = `${todo.description}`;
+    edit.classList.add('grow');
 
     listElement.dataset.listId = todo.index;
     input.checked = todo.completed;
@@ -34,6 +40,9 @@ const render = () => {
     span.innerHTML = `${todo.description}`;
     icon.classList.add('fas');
     icon.classList.add('fa-ellipsis-v');
+    icon.classList.add('show-more');
+    dlt.classList.add('fas');
+    dlt.classList.add('fa-trash-alt');
 
     listElement.appendChild(input);
     listElement.appendChild(span);
@@ -44,6 +53,11 @@ const render = () => {
     input.addEventListener('change', () => {
       taskComp(todo, input);
       save(todoList);
+    });
+
+    icon.addEventListener('click', () => {
+      icon.replaceWith(dlt);
+      span.replaceWith(edit);
     });
   });
 };

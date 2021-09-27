@@ -5,6 +5,6 @@ export const createList = (task) => (
     completed: [],
   });
 
-export const editList = () => {
+export const deleteList = () => {
 
 };
