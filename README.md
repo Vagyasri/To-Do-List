@@ -45,6 +45,8 @@ In this project, I built a simple HTML list of To Do tasks. This simple web page
 - Update Distribution folder with the changes from Source folder: Run npm run build
 - Check the live changes through the local host: Run npm start
 
+#### For better guidance on setting up Web-pack in your local system go through [this repo](https://github.com/Vagyasri/Webpack-Setup.git)
+
 ### Check linter errors:
 
 - Install npm
