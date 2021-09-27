@@ -5,6 +5,7 @@ import { createList } from './crud.js';
 const container = document.querySelector('.list-container');
 const newList = document.querySelector('.new-data');
 const newBar = document.querySelector('.add-bar');
+const refresh = document.querySelector('.fa-sync-alt');
 
 const clear = (element) => {
   while (element.firstChild) element.removeChild(element.firstChild);
@@ -61,6 +62,10 @@ const render = () => {
     });
   });
 };
+
+refresh.addEventListener('click', () => {
+  window.location.reload();
+});
 
 render();
 
