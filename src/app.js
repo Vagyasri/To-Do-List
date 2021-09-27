@@ -5,16 +5,7 @@ import { taskComp, save } from './function.js';
 
 const container = document.querySelector('.list-container');
 
-const todoList = [{
-  index: 1,
-  description: 'Wash the Dishes',
-  completed: false,
-},
-{
-  index: 2,
-  description: 'Complete to-do list Project',
-  completed: false,
-}];
+const todoList = [];
 
 const clear = (element) => {
   while (element.firstChild) element.removeChild(element.firstChild);
