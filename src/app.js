@@ -64,6 +64,11 @@ const render = () => {
 
 render();
 
+const saveAndRender = () => {
+  save();
+  render();
+};
+
 newList.addEventListener('submit', (e) => {
   e.preventDefault();
   const listName = newBar.value;
@@ -71,6 +76,5 @@ newList.addEventListener('submit', (e) => {
   const list = createList(listName);
   newBar.value = null;
   todoList.push(list);
-  save();
-  render();
+  saveAndRender();
 });
