@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import _ from 'lodash';
 import './style.css';
-import { selectList, taskComp, save } from './function.js';
+import { taskComp, save } from './function.js';
 
 const container = document.querySelector('.list-container');
 
