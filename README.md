@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # To Do List
-In this project, I built a simple HTML list of To Do tasks. This simple web page is built using webpack and served by a webpack dev server.
+In this project, I have implemented the CRUD (create, update, delete) methods. All the elements of the user interface are fully functional in this app.
 
 ## Built With
 
