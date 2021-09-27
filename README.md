@@ -1,7 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # To Do List
-In this project, I built a simple HTML list of To Do tasks. This simple web page is built using webpack and served by a webpack dev server.
+In this project, I have added the following functionality in order to make the application interactive.
+- Mark task completion by selecting the corresponding checkbox
+- Undo it by unchecking the checkbox
+- Updated tasks is stored in local storage
 
 ## Built With
 
