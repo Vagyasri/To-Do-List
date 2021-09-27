@@ -1,5 +1,5 @@
 import './style.css';
-import { todoList, taskComp, save } from './function.js';
+import { todoList, taskComp, listKey } from './function.js';
 import { createList } from './crud.js';
 
 const container = document.querySelector('.list-container');
@@ -7,8 +7,16 @@ const newList = document.querySelector('.new-data');
 const newBar = document.querySelector('.add-bar');
 const refresh = document.querySelector('.fa-sync-alt');
 
+const SELECTED_LIST_ID = 'task.selectedListId';
+let selectedListId = localStorage.getItem(SELECTED_LIST_ID);
+
 const clear = (element) => {
   while (element.firstChild) element.removeChild(element.firstChild);
+};
+
+const save = () => {
+  localStorage.setItem(listKey, JSON.stringify(todoList));
+  localStorage.setItem(SELECTED_LIST_ID, selectedListId);
 };
 
 const render = () => {
@@ -29,11 +37,15 @@ const render = () => {
     input.classList.add('cursor');
 
     edit.type = 'text';
-    edit.placeholder = `${todo.description}`;
+    edit.value = `${todo.description}`;
     edit.classList.add('grow');
 
     listElement.dataset.listId = todo.index;
     input.checked = todo.completed;
+
+    if (todo.index === selectedListId) {
+      div.classList.add('active');
+    }
 
     div.classList.add('listcont-prop');
     listElement.classList.add('list-prop');
@@ -73,6 +85,13 @@ const saveAndRender = () => {
   save();
   render();
 };
+
+container.addEventListener('click', (e) => {
+  if (e.target.tagName.toLowerCase() === 'li') {
+    selectedListId = e.target.dataset.listId;
+    saveAndRender();
+  }
+});
 
 newList.addEventListener('submit', (e) => {
   e.preventDefault();
