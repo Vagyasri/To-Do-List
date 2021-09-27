@@ -50,6 +50,11 @@ const render = () => {
     listElement.appendChild(icon);
     div.appendChild(listElement);
     container.appendChild(div);
+
+    input.addEventListener('change', () => {
+      taskComp(todo, input);
+      save(todoList);
+    });
   });
 };
 
