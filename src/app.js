@@ -1,5 +1,6 @@
 import './style.css';
 import { todoList, taskComp, save } from './function.js';
+import { createList } from './crud.js';
 
 const container = document.querySelector('.list-container');
 const newList = document.querySelector('.new-data');
@@ -48,10 +49,6 @@ const render = () => {
 };
 
 render();
-
-function createList(task) {
-  return { index: Date.now().toString(), description: task, completed: [] };
-}
 
 newList.addEventListener('submit', (e) => {
   e.preventDefault();
