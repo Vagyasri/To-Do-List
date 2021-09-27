@@ -8,12 +8,12 @@ const container = document.querySelector('.list-container');
 const todoList = [{
   index: 1,
   description: 'Wash the Dishes',
-  completed: true,
+  completed: false,
 },
 {
   index: 2,
   description: 'Complete to-do list Project',
-  completed: true,
+  completed: false,
 }];
 
 const clear = (element) => {
