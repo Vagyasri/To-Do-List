@@ -1,11 +1,9 @@
-// eslint-disable-next-line no-unused-vars
-import _ from 'lodash';
 import './style.css';
-import { taskComp, save } from './function.js';
+import { todoList, taskComp, save } from './function.js';
 
 const container = document.querySelector('.list-container');
-
-const todoList = [];
+const newList = document.querySelector('.new-data');
+const newBar = document.querySelector('.add-bar');
 
 const clear = (element) => {
   while (element.firstChild) element.removeChild(element.firstChild);
@@ -50,3 +48,18 @@ const render = () => {
 };
 
 render();
+
+function createList(task) {
+  return { index: Date.now().toString(), description: task, completed: [] };
+}
+
+newList.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const listName = newBar.value;
+  if (listName == null || listName === '') return;
+  const list = createList(listName);
+  newBar.value = null;
+  todoList.push(list);
+  save();
+  render();
+});
