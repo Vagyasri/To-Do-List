@@ -72,6 +72,17 @@ const render = () => {
       icon.replaceWith(dlt);
       span.replaceWith(edit);
     });
+
+    dlt.addEventListener('click', (e) => {
+      if (e.target.className === 'active') {
+        const li = e.target.parentElement;
+        li.parentNode.removeChild(listElement);
+      }
+    });
+
+    // edit.addEventListener('enter', () => {
+    //   window.location.reload();
+    // });
   });
 };
 
