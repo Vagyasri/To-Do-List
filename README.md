@@ -47,6 +47,8 @@ In this project, I have implemented the CRUD (create, update, delete) methods. A
 
 #### For better guidance on setting up Web-pack in your local system go through [this repo](https://github.com/Vagyasri/Webpack-Setup.git)
 
+<img src="/icon-square-small.85ba630cf0c5f29ae3e3.svg" alt="webpack icon" width="35" height="35">
+
 ### Check linter errors:
 
 - Install npm
