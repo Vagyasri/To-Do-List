@@ -1,6 +1,6 @@
 import './style.css';
 import { todoList, taskComp, listKey } from './function.js';
-import { createList } from './crud.js';
+import { createList, deleteList } from './crud.js';
 
 const container = document.querySelector('.list-container');
 const newList = document.querySelector('.new-data');
@@ -34,6 +34,7 @@ const render = () => {
     input.name = 'name';
     input.value = 'value';
     input.id = 'id';
+    input.classList.add('uncheck');
     input.classList.add('cursor');
 
     edit.type = 'text';
@@ -82,15 +83,6 @@ const render = () => {
     // edit.addEventListener('enter', () => {
     //   window.location.reload();
     // });
-
-    function deleteList(e) {
-      const deleteButton = e.target;
-      if (deleteButton.classList[1] === 'fa-trash-alt') {
-        const itemToDelete = deleteButton.parentElement.parentElement;
-        itemToDelete.remove();
-      }
-    }
-    container.addEventListener('click', deleteList);
   });
 };
 
@@ -121,3 +113,5 @@ newList.addEventListener('submit', (e) => {
   todoList.push(list);
   saveAndRender();
 });
+
+container.addEventListener('click', deleteList);
