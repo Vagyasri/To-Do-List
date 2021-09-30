@@ -73,16 +73,24 @@ const render = () => {
       span.replaceWith(edit);
     });
 
-    dlt.addEventListener('click', (e) => {
-      if (e.target.className === 'active') {
-        const li = e.target.parentElement;
-        li.parentNode.removeChild(listElement);
-      }
-    });
+    // dlt.addEventListener('click', (e) => {
+    //   if (e.target.className === 'active') {
+    //     dlt.parentNode.remove(dlt);
+    //   }
+    // });
 
     // edit.addEventListener('enter', () => {
     //   window.location.reload();
     // });
+
+    function deleteList(e) {
+      const deleteButton = e.target;
+      if (deleteButton.classList[1] === 'fa-trash-alt') {
+        const itemToDelete = deleteButton.parentElement.parentElement;
+        itemToDelete.remove();
+      }
+    }
+    container.addEventListener('click', deleteList);
   });
 };
 
