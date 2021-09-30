@@ -6,6 +6,7 @@ const container = document.querySelector('.list-container');
 const newList = document.querySelector('.new-data');
 const newBar = document.querySelector('.add-bar');
 const refresh = document.querySelector('.fa-sync-alt');
+// const filterOption = document.querySelector('.filter-todo');
 
 const clear = (element) => {
   while (element.firstChild) element.removeChild(element.firstChild);
@@ -30,7 +31,6 @@ const render = () => {
     input.name = 'name';
     input.value = 'value';
     input.id = 'id';
-    input.classList.add('uncheck');
     input.classList.add('cursor');
 
     edit.type = 'text';
@@ -38,7 +38,6 @@ const render = () => {
     edit.classList.add('grow');
 
     listElement.dataset.listId = todo.index;
-    input.checked = todo.completed;
 
     div.classList.add('listcont-prop');
     listElement.classList.add('list-prop');
@@ -55,6 +54,8 @@ const render = () => {
     listElement.appendChild(icon);
     div.appendChild(listElement);
     container.appendChild(div);
+
+    input.checked = todo.completed;
 
     input.addEventListener('change', () => {
       taskComp(todo, input);
@@ -93,4 +94,29 @@ newList.addEventListener('submit', (e) => {
   saveAndRender();
 });
 
+// const filterTodo = () => {
+//   const selection = container.childNodes;
+//   selection.forEach((sel) => {
+//     switch (e.target.value) {
+//       default:
+//         sel.style.display = 'flex';
+//         break;
+//       case 'completed':
+//         if (taskComp) {
+//           sel.style.display = 'flex';
+//         } else {
+//           sel.style.display = 'none';
+//         }
+//         break;
+//       case 'uncompleted':
+//         if (!taskComp) {
+//           sel.style.display = 'flex';
+//         } else {
+//           sel.style.display = 'none';
+//         }
+//     }
+//   });
+// };
+
 container.addEventListener('click', deleteList);
+// filterOption.addEventListener('click', filterTodo);

@@ -13,8 +13,8 @@ export const deleteList = (e) => {
     const itemToDelete = deleteButton.parentElement.parentElement;
     itemToDelete.remove();
   }
-
-  if (deleteButton.classList[0] === 'uncheck') {
+  const checkBoxButton = e.target;
+  if (checkBoxButton.classList[0] === 'uncheck') {
     const checkBox = deleteButton.parentElement;
     checkBox.classlist.toggle('completed');
   }
