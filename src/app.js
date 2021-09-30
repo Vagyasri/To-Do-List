@@ -1,12 +1,11 @@
 import './style.css';
-import { todoList, taskComp, listKey } from './function.js';
+import { todoList, listKey } from './function.js';
 import { createList, deleteList } from './crud.js';
 
 const container = document.querySelector('.list-container');
 const newList = document.querySelector('.new-data');
 const newBar = document.querySelector('.add-bar');
 const refresh = document.querySelector('.fa-sync-alt');
-// const filterOption = document.querySelector('.filter-todo');
 
 const clear = (element) => {
   while (element.firstChild) element.removeChild(element.firstChild);
@@ -55,21 +54,10 @@ const render = () => {
     div.appendChild(listElement);
     container.appendChild(div);
 
-    input.checked = todo.completed;
-
-    input.addEventListener('change', () => {
-      taskComp(todo, input);
-      save(todoList);
-    });
-
     icon.addEventListener('click', () => {
       icon.replaceWith(dlt);
       span.replaceWith(edit);
     });
-
-    // edit.addEventListener('enter', () => {
-    //   window.location.reload();
-    // });
   });
 };
 
@@ -94,29 +82,4 @@ newList.addEventListener('submit', (e) => {
   saveAndRender();
 });
 
-// const filterTodo = () => {
-//   const selection = container.childNodes;
-//   selection.forEach((sel) => {
-//     switch (e.target.value) {
-//       default:
-//         sel.style.display = 'flex';
-//         break;
-//       case 'completed':
-//         if (taskComp) {
-//           sel.style.display = 'flex';
-//         } else {
-//           sel.style.display = 'none';
-//         }
-//         break;
-//       case 'uncompleted':
-//         if (!taskComp) {
-//           sel.style.display = 'flex';
-//         } else {
-//           sel.style.display = 'none';
-//         }
-//     }
-//   });
-// };
-
 container.addEventListener('click', deleteList);
-// filterOption.addEventListener('click', filterTodo);

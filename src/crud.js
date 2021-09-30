@@ -4,7 +4,7 @@ export const createList = (task) => (
   {
     index: todoList.length,
     description: task,
-    completed: [],
+    completed: false,
   });
 
 export const deleteList = (e) => {
