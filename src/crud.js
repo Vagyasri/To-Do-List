@@ -1,4 +1,4 @@
-import { todoList } from './function.js';
+import { todoList } from './status.js';
 
 export const createList = (task) => (
   {

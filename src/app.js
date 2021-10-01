@@ -1,6 +1,9 @@
 import './style.css';
-import { todoList, listKey } from './function.js';
+import status from './status.js';
 import { createList, deleteList } from './crud.js';
+
+const LIST_KEY = 'task.list';
+const todoList = JSON.parse(localStorage.getItem(LIST_KEY)) || [];
 
 const container = document.querySelector('.list-container');
 const newList = document.querySelector('.new-data');
@@ -12,7 +15,7 @@ const clear = (element) => {
 };
 
 const save = () => {
-  localStorage.setItem(listKey, JSON.stringify(todoList));
+  localStorage.setItem(LIST_KEY, JSON.stringify(todoList));
 };
 
 const render = () => {
@@ -37,6 +40,12 @@ const render = () => {
     edit.classList.add('grow');
 
     listElement.dataset.listId = todo.index;
+
+    input.checked = todo.completed;
+    input.addEventListener('change', () => {
+      status(input, todo);
+      save(todoList);
+    });
 
     div.classList.add('listcont-prop');
     listElement.classList.add('list-prop');
