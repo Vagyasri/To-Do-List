@@ -1,9 +1,6 @@
 import './style.css';
-import status from './status.js';
+import { status, todoList, LIST_KEY } from './status.js';
 import { createList, deleteList } from './crud.js';
-
-const LIST_KEY = 'task.list';
-const todoList = JSON.parse(localStorage.getItem(LIST_KEY)) || [];
 
 const container = document.querySelector('.list-container');
 const newList = document.querySelector('.new-data');
@@ -39,8 +36,6 @@ const render = () => {
     edit.value = `${todo.description}`;
     edit.classList.add('grow');
 
-    listElement.dataset.listId = todo.index;
-
     input.checked = todo.completed;
     input.addEventListener('change', () => {
       status(input, todo);
@@ -49,9 +44,9 @@ const render = () => {
 
     div.classList.add('listcont-prop');
     listElement.classList.add('list-prop');
-    span.classList.add('uncheck');
     span.classList.add('grow');
     span.innerHTML = `${todo.description}`;
+
     icon.classList.add('fas');
     icon.classList.add('fa-ellipsis-v');
     icon.classList.add('show-more');

@@ -1,4 +1,4 @@
-import { todoList } from './status.js';
+import { todoList, removeLocal } from './status.js';
 
 export const createList = (task) => (
   {
@@ -11,6 +11,7 @@ export const deleteList = (e) => {
   const deleteButton = e.target;
   if (deleteButton.classList[1] === 'fa-trash-alt') {
     const itemToDelete = deleteButton.parentElement.parentElement;
+    removeLocal(itemToDelete);
     itemToDelete.remove();
   }
 };

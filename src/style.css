@@ -42,7 +42,7 @@ i {
   cursor: pointer;
 }
 
-.completed {
+input[type=checkbox]:checked + span {
   color: red;
   text-decoration: line-through;
 }
