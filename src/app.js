@@ -40,6 +40,7 @@ const render = () => {
 
     div.classList.add('listcont-prop');
     listElement.classList.add('list-prop');
+    span.classList.add('uncheck');
     span.classList.add('grow');
     span.innerHTML = `${todo.description}`;
     icon.classList.add('fas');
