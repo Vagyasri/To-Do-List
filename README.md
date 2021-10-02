@@ -1,10 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # To Do List
-In this project, I have added the following functionality in order to make the application interactive.
-- Mark task completion by selecting the corresponding checkbox
-- Undo it by unchecking the checkbox
-- Updated tasks is stored in local storage
+In this project, I have implemented the CRUD (create, update, delete) methods. All the elements of the user interface are fully functional in this app.
+
 
 ## Built With
 
@@ -47,6 +45,9 @@ In this project, I have added the following functionality in order to make the a
 - Install Web-pack: Run npm install webpack
 - Update Distribution folder with the changes from Source folder: Run npm run build
 - Check the live changes through the local host: Run npm start
+
+#### For better guidance on setting up Web-pack in your local system go through [this repo](https://github.com/Vagyasri/Webpack-Setup.git)
+
 
 ### Check linter errors:
 
