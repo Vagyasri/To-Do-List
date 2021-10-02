@@ -25,6 +25,7 @@ export const deleteAllDone = () => {
     }
   });
   for (let i = 0; i < todoList.length; i += 1) {
+    // eslint-disable-next-line array-callback-return
     todoList.filter((task) => {
       if (task.completed) {
         const index = todoList.indexOf(task);
