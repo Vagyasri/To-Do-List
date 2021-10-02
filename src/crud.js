@@ -24,5 +24,20 @@ export const deleteAllDone = () => {
       checkbox.parentElement.parentElement.remove();
     }
   });
-  window.location.reload();
+  for (let i = 0; i < todoList.length; i += 1) {
+    todoList.filter((task) => {
+      if (task.completed) {
+        const index = todoList.indexOf(task);
+        todoList.splice(index, 1);
+        let i = 0;
+        while (i < todoList.length) {
+          if (todoList[i].id > task.id) {
+            todoList[i].id -= 1;
+          }
+          i += 1;
+        }
+        save();
+      }
+    });
+  }
 };
