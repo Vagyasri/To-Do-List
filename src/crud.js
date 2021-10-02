@@ -1,4 +1,4 @@
-import { todoList, removeLocal } from './status.js';
+import { todoList, removeLocal, save } from './status.js';
 
 export const createList = (task) => (
   {
@@ -13,5 +13,16 @@ export const deleteList = (e) => {
     const itemToDelete = deleteButton.parentElement.parentElement;
     removeLocal(itemToDelete);
     itemToDelete.remove();
+    save();
   }
+};
+
+export const deleteAllDone = () => {
+  const completed = document.querySelectorAll('.check');
+  completed.forEach((checkbox) => {
+    if (checkbox.checked) {
+      checkbox.parentElement.parentElement.remove();
+    }
+  });
+  window.location.reload();
 };

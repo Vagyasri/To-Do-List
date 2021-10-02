@@ -1,18 +1,15 @@
 import './style.css';
-import { status, todoList, LIST_KEY } from './status.js';
-import { createList, deleteList } from './crud.js';
+import { status, todoList, save } from './status.js';
+import { createList, deleteList, deleteAllDone } from './crud.js';
 
 const container = document.querySelector('.list-container');
 const newList = document.querySelector('.new-data');
 const newBar = document.querySelector('.add-bar');
 const refresh = document.querySelector('.fa-sync-alt');
+const all = document.querySelector('.all');
 
 const clear = (element) => {
   while (element.firstChild) element.removeChild(element.firstChild);
-};
-
-const save = () => {
-  localStorage.setItem(LIST_KEY, JSON.stringify(todoList));
 };
 
 const render = () => {
@@ -31,9 +28,11 @@ const render = () => {
     input.value = 'value';
     input.id = 'id';
     input.classList.add('cursor');
+    input.classList.add('check');
 
     edit.type = 'text';
     edit.value = `${todo.description}`;
+    edit.id = `${todo.index}`;
     edit.classList.add('grow');
 
     input.checked = todo.completed;
@@ -88,3 +87,5 @@ newList.addEventListener('submit', (e) => {
 });
 
 container.addEventListener('click', deleteList);
+
+all.addEventListener('click', deleteAllDone);
