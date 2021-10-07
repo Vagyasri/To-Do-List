@@ -4,6 +4,8 @@ body {
 
 .list-container {
   margin: 0;
+  height: 28vh;
+  overflow-y: scroll;
 }
 
 #tab {
@@ -14,6 +16,7 @@ body {
   height: 50vh;
   margin-top: 100px;
   position: relative;
+  overflow: scroll;
 }
 
 .main {
@@ -22,6 +25,13 @@ body {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  top: 0;
+  position: sticky;
+}
+
+.new-data {
+  top: 64px;
+  position: sticky;
 }
 
 input,
@@ -73,7 +83,7 @@ input[type=checkbox]:checked + span {
   color: grey;
   padding: 20px 0;
   margin: auto;
-  position: absolute;
   bottom: 0;
   width: 100%;
+  position: sticky;
 }
