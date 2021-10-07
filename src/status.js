@@ -1,5 +1,6 @@
 const LIST_KEY = 'task.list';
-const todoList = JSON.parse(localStorage.getItem(LIST_KEY)) || [];
+// eslint-disable-next-line import/no-mutable-exports
+let todoList = JSON.parse(localStorage.getItem(LIST_KEY)) || [];
 
 const save = () => {
   localStorage.setItem(LIST_KEY, JSON.stringify(todoList));
