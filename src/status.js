@@ -13,9 +13,8 @@ const status = (checkbox, task) => {
   }
 };
 
-const removeLocal = (todo) => {
-  const todoIndex = todo.children[0].children[1].value;
-  todoList.splice(todoList.indexOf(todoIndex), 1);
+const removeLocal = (index) => {
+  todoList = todoList.filter((task) => task.index !== index);
   save();
   window.location.reload();
 };

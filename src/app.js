@@ -51,6 +51,7 @@ const render = () => {
     icon.classList.add('show-more');
     dlt.classList.add('fas');
     dlt.classList.add('fa-trash-alt');
+    dlt.setAttribute('data-index', todo.index);
 
     listElement.appendChild(input);
     listElement.appendChild(span);
